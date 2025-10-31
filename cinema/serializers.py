@@ -21,13 +21,12 @@ class CinemaHallSerializer(serializers.ModelSerializer):
 
 
 class MovieSerializer(serializers.ModelSerializer):
-    class MovieSerializer(serializers.ModelSerializer):
-        actors = serializers.PrimaryKeyRelatedField(
-            many=True, queryset=Actor.objects.all(), required=False
-        )
-        genres = serializers.PrimaryKeyRelatedField(
-            many=True, queryset=Genre.objects.all(), required=False
-        )
+    actors = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Actor.objects.all(), required=False
+    )
+    genres = serializers.PrimaryKeyRelatedField(
+        many=True, queryset=Genre.objects.all(), required=False
+    )
 
     class Meta:
         model = Movie
